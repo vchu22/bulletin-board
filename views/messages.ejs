@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bulletin Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<h1>All messages</h1>
+  <table class="posts">
+    <tr>
+      <th>Title</th>
+      <th>Messages</th>
+      <th>Commenter</th>
+    </tr>
+    <% for(var row = 0; row < allMessages.length; row++){ %>
+      <tr>
+        <td><%= allMessages[row].title %></td>
+        <td><%= allMessages[row].body %></td>
+        <td><%= allMessages[row].commenter %></td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bulletin Board</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+	<h1>Enter a message</h1>
+	<form method='post' action='/message'>
+    <table class="table">
+      <tr>
+        <td><label for="title">Title: </label></td>
+        <td><input type="text" id="title" name="title"></td>
+      </tr>
+      <tr>
+        <td><label for="messagebody">Message body: </label></td>
+        <td><textarea id="messagebody" name="messagebody"></textarea></td>
+      </tr>
+      <tr>
+        <td><label for="Commenter">Commenter: </label></td>
+        <td><input type="text" id="commenter" name="commenter"></td>
+      </tr><tr>
+        <td><input type="submit"></td>
+      </tr>
+    </table>
+	</form>
+</body>
+</html>
