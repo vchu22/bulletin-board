@@ -11,41 +11,6 @@ app.set('views', './views');
 
 var connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard';
 
-function Message(title,body) {
-	this.title = title;
-	this.body = body;
-};
-
-function getMessages(){
-  var allMessages = [];
-  var oneMessage = {};
-  pg.connect(connectionString, function(err, client, done) {
-    if(err){
-      console.log(err);   // error handling
-      if(client){
-        done(client);
-      }
-      return;
-    }else{
-      client.query(`select * from messages`,
-        function(err, result) {
-        if(err){
-          console.log(err);   //error handling
-          return done(client);
-        }else{
-          for(var i=0; i < result.rows.length; i++){
-            allMessages.push(result.rows[i]);
-          }
-          console.log(`allMessages: ${allMessages}`);
-          return allMessages;
-          done();
-          pg.end();
-        }
-        });
-    }
-   });
-}
-
 app.get('/', function(req,res) {
 	res.render('index');
 });
